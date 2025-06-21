@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import favicon from '../../assets/favicon.png';
+import logo from '../../assets/favicon.png';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className='flex items-center'>
           <img
             className='md:w-15 w-10'
-            src={favicon}
+            src={logo}
             alt="Icon"
           />
           <div className="text-2xl font-bold text-pink-600">HusnaDeals</div>
