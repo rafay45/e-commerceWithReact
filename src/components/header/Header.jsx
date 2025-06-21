@@ -12,7 +12,7 @@ export default function Navbar() {
         <div className='flex items-center'>
           <img
             className='md:w-15 w-10'
-            src="src/assets/favicon.png"
+            src="/src/assets/favicon.png"
             alt="Icon"
           />
           <div className="text-2xl font-bold text-pink-600">HusnaDeals</div>
