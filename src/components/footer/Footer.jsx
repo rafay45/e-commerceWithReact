@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 sm:grid-cols-2 gap-8">
 
         <div>
-          <h2 className="text-2xl font-bold text-pink-600">Husna</h2>
+          <h2 className="text-2xl font-bold text-pink-600">HusnaDeals</h2>
           <p className="mt-2 text-sm text-gray-400">
             Your one-stop shop for style, savings, and satisfaction.
           </p>
