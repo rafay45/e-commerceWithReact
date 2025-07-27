@@ -6,12 +6,22 @@ export default function Home() {
 
   return (
     <section className="bg-gray-100 min-h-screen">
-      <div className="md:h-96 h-[550px] bg-pink-600 flex flex-wrap justify-center items-center">
-        <div className=" flex justify-centern w-full md:w-1/2 items-center border-2">
-          <h1 className="text-4xl font-bold">Welcome to <span className="text-white">HusnaDeals</span></h1>
+      <div className="md:h-96 h-[550px] bg-pink-600 flex flex-wrap justify-around items-center">
+        <div
+          className="flex flex-col justify-centern items-center w-full md:w-[40%] border-2">
+          <h1
+            className="text-4xl font-bold"
+          >Welcome to
+            <span
+              className="text-white"
+            >HusnaDeals</span>
+          </h1>
+          <p>From fashion to electronics, find unbeatable deals just a click away.
+            Affordable prices, trusted quality, and fast delivery to your doorstep.
+            Shop smart, live better – only at HusnaDeals.</p>
         </div>
-        <div className="">
-            {/* <img src={banner} alt="" /> */}
+        <div className="md:w-[40%] md:h-80 h-70 flex justify-center w-full">
+          <img src={banner} alt="" />
         </div>
       </div>
 
