@@ -7,10 +7,7 @@ export default function Home() {
   return (
     <section className="bg-gray-100 min-h-screen">
       <div className="w-full h-96 mx-auto text-center mb-10">
-        <img
-        className="h-96 w-screen"
-          src={ banner }
-          alt="" />
+      <h1 className="text-4xl">Welcome to <span className="text-pink-600">Husna deal's</span></h1>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
