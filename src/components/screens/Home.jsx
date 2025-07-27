@@ -6,11 +6,14 @@ export default function Home() {
 
   return (
     <section className="bg-gray-100 min-h-screen">
-      <div className="w-full h-96 mx-auto text-center mb-10">
-      <h1 className="text-4xl">Welcome to <span className="text-pink-600">Husna deal's</span></h1>
+      <div className="md:h-96  bg-pink-600 flex flex-wrap">
+        <div className=" flex justify-centern w-full items-center">
+          <h1 className="text-4xl font-bold">Welcome to <span className="text-white">HusnaDeals</span></h1>
+        </div>
+        <div className=""></div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 mt-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {products.map((product) => (
           <div
             key={product.id}
