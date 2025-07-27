@@ -1,16 +1,18 @@
 import fetchapi from "../../customhook/fetchapi";
-import banner from "../../assets/banner.jpg"
+import banner from "../../assets/bannerImage.png"
 export default function Home() {
   const products = fetchapi([]);
   console.log("Products fetched:", products);
 
   return (
     <section className="bg-gray-100 min-h-screen">
-      <div className="md:h-96  bg-pink-600 flex flex-wrap">
-        <div className=" flex justify-centern w-full items-center">
+      <div className="md:h-96 h-[550px] bg-pink-600 flex flex-wrap justify-center items-center">
+        <div className=" flex justify-centern w-full md:w-1/2 items-center border-2">
           <h1 className="text-4xl font-bold">Welcome to <span className="text-white">HusnaDeals</span></h1>
         </div>
-        <div className=""></div>
+        <div className="">
+            {/* <img src={banner} alt="" /> */}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 mt-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
