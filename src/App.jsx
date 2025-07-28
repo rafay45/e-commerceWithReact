@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { switcherProvider } from './components/switcher/switcher'
 import './App.css'
 import { Container, Navbar, Footer } from './components'
+import { SwitcherProvider } from "./components/switcher/switcher"
 import { Outlet } from 'react-router-dom'
 
 function App() {
   const [theme, setTheme] = useState("light")
-  
+
   const darktheme = () => {
     setTheme("dark")
   }
@@ -15,20 +15,20 @@ function App() {
   }
 
   useEffect(() => {
-   document.querySelector('html').classList.remove('light', 'dark');
-   document.querySelector('html').classList.add(theme)
+    document.querySelector('html').classList.remove('light', 'dark');
+    document.querySelector('html').classList.add(theme)
   }, [theme])
-  
+
   return (
-   <div>
-    <switcherProvider value={{theme, darktheme, lightTheme}}>
-    <Container>
-    <Navbar />
-    <Outlet />
-    <Footer />
-    </Container>
-    </switcherProvider>
-   </div>
+    <div>
+      <SwitcherProvider value={{ theme, darktheme, lightTheme }}>
+        <Container>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </Container>
+      </SwitcherProvider>
+    </div>
   )
 }
 

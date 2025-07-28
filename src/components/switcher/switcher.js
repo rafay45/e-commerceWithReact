@@ -1,13 +1,13 @@
 import { createContext, useContext } from "react";
 
-export const switcher = createContext({
+export const Switcher = createContext({
     theme: "light",
     darktheme: () => { },
     lightTheme: () => { }
 })
 
-export const switcherProvider = switcher.Provider
+export const SwitcherProvider = Switcher.Provider
 
 export default function useTheme() {
-    return useContext(createContext)
+    return useContext(Switcher)
 }
