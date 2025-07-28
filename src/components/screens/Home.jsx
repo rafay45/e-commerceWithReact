@@ -12,23 +12,22 @@ export default function Home() {
         className="md:h-96 h-[550px] bg-pink-600 flex flex-wrap justify-around items-center"
       >
         <div
-          className="flex flex-col justify-centern items-center w-full md:w-[40%] border-2"
+          className="flex flex-col justify-center h-60 md:h-70 items-center w-full md:w-[40%]"
         >
           <h1
-            className="text-4xl font-bold"
-          >Welcome to
-            <span
+            className="text-4xl md:text-5xl font-bold"
+          >Welcome to <span
               className="text-white"
             >HusnaDeals</span>
           </h1>
-          <p>From fashion to electronics, find unbeatable deals just a click away.
+          <p className=" text-white mt-2 text-center text-xl">From fashion to electronics, find unbeatable deals just a click away.
             Affordable prices, trusted quality, and fast delivery to your doorstep.
             Shop smart, live better – only at HusnaDeals.</p>
         </div>
         <div
-          className="md:w-[40%] md:h-80 h-70 flex justify-center w-full"
+          className="md:w-[40%] md:h-80 h-60 flex justify-center w-full"
         >
-          <img src={banner} alt="" />
+          <img src={banner} alt="Here's an image" />
         </div>
       </div>
 
