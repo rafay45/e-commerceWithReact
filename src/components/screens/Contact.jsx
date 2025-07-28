@@ -1,7 +1,5 @@
-import { Container } from "../index"
 export default function Contact() {
   return (
-    <Container>
       <section className="bg-gray-100 py-16 px-4" id="contact">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
 
@@ -61,6 +59,5 @@ export default function Contact() {
           </form>
         </div>
       </section>
-    </Container>
   );
 }

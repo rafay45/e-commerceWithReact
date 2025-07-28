@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Container } from "../index"
 export default function About() {
     return (
-        <Container>
             <section className="bg-gray-100 text-gray-600 py-20 px-6">
                 <div className="max-w-7xl mx-auto space-y-16">
 
@@ -90,6 +88,5 @@ export default function About() {
                     </div>
                 </div>
             </section>
-        </Container>
     );
 }

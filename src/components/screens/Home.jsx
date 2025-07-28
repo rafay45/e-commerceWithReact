@@ -1,7 +1,6 @@
 import fetchapi from "../../customhook/fetchapi";
 import banner from "../../assets/bannerImage.png"
 import { useRef } from "react";
-import { Container } from "../index"
 
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
 
 
   return (
-     <Container>
     <section
       className="bg-gray-100 min-h-screen"
     >
@@ -90,6 +88,5 @@ export default function Home() {
         ))}
       </div>
     </section>
-    </Container>
   );
 }

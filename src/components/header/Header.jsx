@@ -4,13 +4,11 @@ import logo from '../../assets/favicon.png';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { LuSunMoon } from "react-icons/lu";
 import { LuSun } from "react-icons/lu";
-import { Container } from "../index"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Container>
       <nav className="bg-gray-100  shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
           {/* Logo */}
@@ -66,6 +64,5 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-    </Container>
   );
 }
