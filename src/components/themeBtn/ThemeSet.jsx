@@ -22,7 +22,7 @@ function ThemeSet() {
         <>
             <button
                 onClick={changeSec}
-                className={`md:w-14 md:h-15 justify-center items-center cursor-pointer ${theme === "dark" ? "flex" : "hidden"} `}>
+                className={`md:w-14 md:h-15 justify-center text-white items-center cursor-pointer ${theme === "dark" ? "flex" : "hidden"} `}>
                 <LuSun size={30} />
             </button>
             <button

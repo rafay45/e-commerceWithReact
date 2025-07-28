@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import { Container, Navbar, Footer } from './components'
 import { SwitcherProvider } from "./components/switcher/switcher"
 import { Outlet } from 'react-router-dom'
