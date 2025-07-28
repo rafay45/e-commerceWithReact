@@ -2,7 +2,7 @@ import { LuSunMoon } from "react-icons/lu"
 import { LuSun } from "react-icons/lu"
 import { useTheme } from "../switcher/switcher"
 
-function themeBtn() {
+function ThemeSet() {
     const { theme , darktheme, lightTheme } = useTheme()
     const changeTheme = () => {
          if(theme){
@@ -21,4 +21,4 @@ function themeBtn() {
     )
 }
 
-export default themeBtn
+export default ThemeSet
