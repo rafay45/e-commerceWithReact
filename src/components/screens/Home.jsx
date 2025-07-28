@@ -1,8 +1,16 @@
 import fetchapi from "../../customhook/fetchapi";
 import banner from "../../assets/bannerImage.png"
+import { useRef } from "react";
 export default function Home() {
   const products = fetchapi([]);
   console.log("Products fetched:", products);
+
+  const reference = useRef(null)
+
+  const handleClick = () => {
+    reference.current.scrollIntoView({ behavior: "smooth" })
+  }
+  
 
   return (
     <section
@@ -17,15 +25,16 @@ export default function Home() {
           <h1
             className="text-3xl md:text-5xl font-bold text-black"
           >Welcome to <span
-              className="md:text-white text-pink-600"
-            >HusnaDeals</span>
+            className="md:text-white text-pink-600"
+          >HusnaDeals</span>
           </h1>
           <p className="text-black text-[14px] md:text-white mt-2 px-4 md:text-xl">From fashion to electronics, find unbeatable deals just a click away.
             Affordable prices, trusted quality, and fast delivery to your doorstep.
             Shop smart, live better – only at HusnaDeals.</p>
-            <button
+          <button
+            onClick={handleClick}
             className="bg-pink-500 font-bold hover:cursor-pointer hover:bg-pink-400 mt-2 text-white px-4 md:px-5 md:text-xl text-xs py-2 rounded-xl shadow-2xl "
-            >Shop Now</button>
+          >Shop Now</button>
         </div>
         <div
           className="md:w-[40%] md:h-80 h-50 flex justify-center w-full"
@@ -35,6 +44,7 @@ export default function Home() {
       </div>
 
       <div
+       ref={reference}
         className="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
       >
         {products.map((product) => (
