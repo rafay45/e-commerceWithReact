@@ -2,12 +2,15 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import logo from '../../assets/favicon.png';
 import { ShoppingCart, Menu, X } from 'lucide-react';
+import { LuSunMoon } from "react-icons/lu";
+import { LuSun } from "react-icons/lu";
 
 export default function Navbar() {
+  const [theme, setTheme] = useState("")
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-100 shadow-md sticky top-0 z-50">
+    <nav className="bg-gray-100  shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
         {/* Logo */}
         <div className='flex items-center'>
@@ -27,6 +30,11 @@ export default function Navbar() {
           <NavLink to="/contact"
             className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} hover:text-pink-600`}>Contact</NavLink>
         </div>
+        <button 
+        // onClick={}
+        className='md:w-14 md:h-15 flex justify-center items-center cursor-pointer'>
+          <LuSunMoon size={30} />
+        </button>
         <div>
           <NavLink to="/cart" className="relative text-gray-900 hover:text-pink-600">
             <ShoppingCart className="inline-block w-5 h-5" />
