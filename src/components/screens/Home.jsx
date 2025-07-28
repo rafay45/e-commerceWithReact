@@ -1,6 +1,9 @@
 import fetchapi from "../../customhook/fetchapi";
 import banner from "../../assets/bannerImage.png"
 import { useRef } from "react";
+import { Container } from "../index"
+
+
 export default function Home() {
   const products = fetchapi([]);
   console.log("Products fetched:", products);
@@ -10,9 +13,10 @@ export default function Home() {
   const handleClick = () => {
     reference.current.scrollIntoView({ behavior: "smooth" })
   }
-  
+
 
   return (
+     <Container>
     <section
       className="bg-gray-100 min-h-screen"
     >
@@ -44,7 +48,7 @@ export default function Home() {
       </div>
 
       <div
-       ref={reference}
+        ref={reference}
         className="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
       >
         {products.map((product) => (
@@ -86,5 +90,6 @@ export default function Home() {
         ))}
       </div>
     </section>
+    </Container>
   );
 }
