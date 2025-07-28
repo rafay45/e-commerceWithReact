@@ -4,6 +4,6 @@ import Navbar from "./header/Header";
 import Contact from "./screens/Contact";
 import Footer from "./footer/Footer";
 import Container from "./container/Container"
-import ThemeSet from "./themeSet/ThemeSet"
+import ThemeSets from "./themeSet/ThemeSets"
 
-export { About, Home, Navbar, Contact, Footer, Container, ThemeSet, };
+export { About, Home, Navbar, Contact, Footer, Container, ThemeSets, };

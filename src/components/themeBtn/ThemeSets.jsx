@@ -2,23 +2,30 @@ import { LuSunMoon } from "react-icons/lu"
 import { LuSun } from "react-icons/lu"
 import { useTheme } from "../switcher/switcher"
 
-function ThemeSet() {
-    const { theme , darktheme, lightTheme } = useTheme()
+function ThemeSets() {
+    const { theme, darkTheme, lightTheme } = useTheme()
     const changeTheme = () => {
-         if(theme){
-            darktheme()
-         }else{
+        if (theme) {
+            darkTheme()
+
+        } else {
             lightTheme()
-         }
+        }
+    }
+    const changeSec = () => {
+        if (darkTheme) {
+            lightTheme()
+        } else {
+            darkTheme()
+        }
     }
     return (
-
         <button
             onClick={changeTheme}
             className='md:w-14 md:h-15 flex justify-center items-center cursor-pointer'>
-            {theme ? <LuSunMoon size={30} /> : <LuSun size={30} />}
+            <LuSunMoon size={30} />
         </button>
     )
 }
 
-export default ThemeSet
+export default ThemeSets

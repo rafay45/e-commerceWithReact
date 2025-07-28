@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 
 export const Switcher = createContext({
     theme: "light",
-    darktheme: () => { },
+    darkTheme: () => { },
     lightTheme: () => { }
 })
 

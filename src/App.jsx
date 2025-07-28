@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom'
 function App() {
   const [theme, setTheme] = useState("light")
 
-  const darktheme = () => {
+  const darkTheme = () => {
     setTheme("dark")
   }
   const lightTheme = () => {
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div>
-      <SwitcherProvider value={{ theme, darktheme, lightTheme }}>
+      <SwitcherProvider value={{ theme, darkTheme, lightTheme }}>
         <Container>
           <Navbar />
           <Outlet />

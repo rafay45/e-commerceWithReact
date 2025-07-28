@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { ThemeSet } from '../index'
+import { ThemeSets } from '../index'
 import logo from '../../assets/favicon.png';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 
@@ -34,7 +34,7 @@ export default function Navbar() {
             <span className="absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full px-1">2</span>
           </NavLink>
         </div>
-        <ThemeSet />
+        <ThemeSets />
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
