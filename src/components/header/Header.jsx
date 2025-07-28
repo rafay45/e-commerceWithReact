@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { ThemeSets } from '../index'
+import { ThemeSet } from '../index'
 import logo from '../../assets/favicon.png';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 
@@ -28,13 +28,13 @@ export default function Navbar() {
           <NavLink to="/contact"
             className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} hover:text-pink-600`}>Contact</NavLink>
         </div>
+        <ThemeSet />
         <div>
           <NavLink to="/cart" className="relative text-gray-900 hover:text-pink-600">
             <ShoppingCart className="inline-block w-5 h-5" />
             <span className="absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full px-1">2</span>
           </NavLink>
         </div>
-        <ThemeSets />
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
