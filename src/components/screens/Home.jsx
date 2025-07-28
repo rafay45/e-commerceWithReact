@@ -9,35 +9,33 @@ export default function Home() {
       className="bg-gray-100 min-h-screen"
     >
       <div
-        className="md:h-96 h-[550px] bg-pink-600 flex flex-wrap justify-around items-center"
+        className="md:h-96 h-[400px] md:bg-pink-600 flex flex-wrap justify-center items-center"
       >
         <div
-          className="flex flex-col justify-center md:items-start h-60 md:h-70 items-center w-full md:w-[40%]"
+          className="flex flex-col justify-center md:items-start h-50 md:h-70 items-center w-full md:w-[40%]"
         >
           <h1
-            className="text-4xl md:text-5xl font-bold text-black"
+            className="text-3xl md:text-5xl font-bold text-black"
           >Welcome to <span
-              className="text-white"
+              className="md:text-white text-pink-600"
             >HusnaDeals</span>
           </h1>
-          <p className=" text-white mt-2 text-center md:text-xl">From fashion to electronics, find unbeatable deals just a click away.
+          <p className="text-black md:text-white mt-2 text-xs text-center md:text-xl">From fashion to electronics, find unbeatable deals just a click away.
             Affordable prices, trusted quality, and fast delivery to your doorstep.
             Shop smart, live better – only at HusnaDeals.</p>
             <button
-            htmlFor="products"
-            className="bg-pink-500 font-bold hover:cursor-pointer hover:bg-pink-400 mt-2 text-white px-5 py-2 rounded-2xl shadow-2xl "
+            className="bg-pink-500 font-bold hover:cursor-pointer hover:bg-pink-400 mt-2 text-white px-4 md:px-5 md:text-xl text-xs py-2 rounded-xl shadow-2xl "
             >Shop Now</button>
         </div>
         <div
-          className="md:w-[40%] md:h-80 h-60 flex justify-center w-full"
+          className="md:w-[40%] md:h-80 h-50 flex justify-center w-full"
         >
           <img src={banner} alt="Here's an image" />
         </div>
       </div>
 
       <div
-      id="products"
-        className="grid grid-cols-1 mt-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+        className="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
       >
         {products.map((product) => (
           <div
