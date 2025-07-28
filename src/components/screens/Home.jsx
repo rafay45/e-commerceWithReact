@@ -20,7 +20,7 @@ export default function Home() {
               className="md:text-white text-pink-600"
             >HusnaDeals</span>
           </h1>
-          <p className="text-black md:text-white mt-2 text-center md:text-xl">From fashion to electronics, find unbeatable deals just a click away.
+          <p className="text-black text-[14px] md:text-white mt-2 px-4 md:text-xl">From fashion to electronics, find unbeatable deals just a click away.
             Affordable prices, trusted quality, and fast delivery to your doorstep.
             Shop smart, live better – only at HusnaDeals.</p>
             <button
