@@ -8,6 +8,6 @@ export const switcher = createContext({
 
 export const switcherProvider = switcher.Provider
 
-export default function useTheme(){
+export default function useTheme() {
     return useContext(createContext)
 }
