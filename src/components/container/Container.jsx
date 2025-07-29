@@ -2,7 +2,7 @@ import React from 'react'
 
 function Container({children}) {
   return (
-    <div>{children}</div>
+    <div className='dark:bg-gray-900'>{children}</div>
   )
 }
 

@@ -47,12 +47,12 @@ export default function Home() {
 
       <div
         ref={reference}
-        className="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+        className="grid grid-cols-1 mt-15 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
       >
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow hover:shadow-lg transition duration-200"
+            className="bg-white mb-5 dark:bg-gray-900 p-4 rounded-xl shadow hover:shadow-lg transition duration-200"
           >
             <div className="flex h-48 rounded-md">
               <img
