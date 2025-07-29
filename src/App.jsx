@@ -2,20 +2,21 @@ import { useState, useEffect } from 'react'
 import { Container, Navbar, Footer } from './components'
 import { SwitcherProvider } from "./components/switcher/switcher"
 import { Outlet } from 'react-router-dom'
-
 function App() {
   const [theme, setTheme] = useState("light")
 
-  const darkTheme = () => {
-    setTheme("dark")
-  }
+    const darkTheme = () => {
+      setTheme("dark")
+    }
+
   const lightTheme = () => {
-    setTheme("light")
+     setTheme("light")
   }
 
   useEffect(() => {
     document.querySelector('html').classList.remove('light', 'dark');
     document.querySelector('html').classList.add(theme)
+    localStorage.setItem('themeToggle', theme)
   }, [theme])
 
   return (

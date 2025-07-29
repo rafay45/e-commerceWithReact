@@ -7,6 +7,7 @@ function ThemeSet() {
     const changeTheme = () => {
         if (theme) {
             darkTheme()
+            // localStorage.setItem('themeToggle', theme)
         } else {
             lightTheme()
         }
@@ -14,6 +15,7 @@ function ThemeSet() {
     const changeSec = () => {
         if (theme === "dark") {
             lightTheme()
+            // localStorage.removeItem('themeToggle')
         } else {
             darkTheme()
         }

@@ -3,8 +3,9 @@ import { createContext, useContext } from "react";
 export const Switcher = createContext({
     theme: "light",
     darkTheme: () => { },
-    lightTheme: () => { }
+    lightTheme: () => { }, 
 })
+
 
 export const SwitcherProvider = Switcher.Provider
 
