@@ -1,16 +1,16 @@
 export default function Contact() {
   return (
-      <section className="bg-gray-100 py-16 px-4" id="contact">
+      <section className="bg-gray-100 dark:bg-gray-800 py-16 px-4" id="contact">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
 
           {/* Contact Info */}
           <div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact <span className="text-pink-600">Us</span></h2>
-            <p className="text-gray-600 mb-6">
+            <h2 className="text-4xl font-bold dark:text-black text-gray-800 mb-4">Contact <span className="text-pink-600 dark:text-gray-400">Us</span></h2>
+            <p className="text-gray-600 mb-6 dark:text-gray-400">
               Have a question, concern, or just want to say hello? We're here to help! Fill out the form or reach us directly using the info below.
             </p>
 
-            <div className="space-y-4 text-gray-700 text-sm">
+            <div className="space-y-4 dark:text-gray-400 text-gray-700 text-sm">
               <p><strong>📍 Address:</strong> Husna HQ, Main Boulevard, Karachi, Pakistan</p>
               <p><strong>📞 Phone:</strong> +92 300 1234567</p>
               <p><strong>📧 Email:</strong> support@husna.com</p>
@@ -19,7 +19,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <form className="bg-white p-8 rounded-xl shadow-md space-y-5 w-full">
+          <form className="bg-white p-8 rounded-xl dark:text-gray-400 dark:bg-gray-900 shadow-md space-y-5 w-full">
             <div>
               <label className="block text-sm font-semibold mb-1">Full Name</label>
               <input

@@ -31,7 +31,7 @@ export default function Navbar() {
         <ThemeSet />
         <div>
           <NavLink to="/cart" className="relative text-gray-900 hover:text-pink-600">
-            <ShoppingCart className="inline-block w-5 h-5 dark:text-gray-400" />
+            <ShoppingCart className="inline-block w-5 h-5 dark:hover:text-pink-600 dark:text-gray-400" />
             <span className="absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full px-1">2</span>
           </NavLink>
         </div>

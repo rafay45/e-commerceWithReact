@@ -19,7 +19,7 @@ export default function Home() {
       className="bg-gray-100 dark:bg-gray-800 min-h-screen"
     >
       <div
-        className="md:h-96 h-[400px] md:bg-pink-600 flex flex-wrap justify-center items-center"
+        className="md:h-96 h-[400px] md:bg-pink-600 md:dark:bg-gray-700 flex flex-wrap justify-center items-center"
       >
         <div
           className="flex flex-col justify-center md:items-start h-50 md:h-70 items-center w-full md:w-[40%]"
