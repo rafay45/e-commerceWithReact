@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <section
-      className="bg-gray-100 min-h-screen"
+      className="bg-gray-100 dark:bg-gray-800 min-h-screen"
     >
       <div
         className="md:h-96 h-[400px] md:bg-pink-600 flex flex-wrap justify-center items-center"
@@ -27,15 +27,15 @@ export default function Home() {
           <h1
             className="text-3xl md:text-5xl font-bold text-black"
           >Welcome to <span
-            className="md:text-white text-pink-600"
+            className="md:text-white dark:text-gray-400 text-pink-600"
           >HusnaDeals</span>
           </h1>
-          <p className="text-black text-[14px] md:text-white mt-2 px-4 md:text-xl">From fashion to electronics, find unbeatable deals just a click away.
+          <p className="text-black text-[14px] md:text-white dark:text-gray-400 md:dark:text-gray-300 mt-2 px-4 md:text-xl">From fashion to electronics, find unbeatable deals just a click away.
             Affordable prices, trusted quality, and fast delivery to your doorstep.
             Shop smart, live better – only at HusnaDeals.</p>
           <button
             onClick={handleClick}
-            className="bg-pink-500 font-bold hover:cursor-pointer hover:bg-pink-400 mt-2 text-white px-4 md:px-5 md:text-xl text-xs py-2 rounded-xl shadow-2xl "
+            className="bg-pink-500 font-bold dark:text-gray-300 hover:cursor-pointer hover:bg-pink-400 mt-2 text-white px-4 md:px-5 md:text-xl text-xs py-2 rounded-xl shadow-2xl "
           >Order Now</button>
         </div>
         <div
@@ -52,7 +52,7 @@ export default function Home() {
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition duration-200"
+            className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow hover:shadow-lg transition duration-200"
           >
             <div className="flex h-48 rounded-md">
               <img
@@ -62,21 +62,21 @@ export default function Home() {
               />
             </div>
             <h3
-              className="text-lg font-semibold text-gray-900 mb-1"
+              className="text-lg font-semibold dark:text-gray-400 text-gray-900 mb-1"
             >
               {product.category}
             </h3>
             <p
-              className="text-gray-900 font-bold text-md mb-3"
+              className="text-gray-900 dark:text-gray-400 font-bold text-md mb-3"
             >${product.price}</p>
             <div
               className="flex items-center justify-between mt-4"
             >
               <span
-                className="text-sm text-gray-500"
+                className="text-sm dark:text-gray-400 text-gray-500"
               >Rating: {product.rating.rate}</span>
               <span
-                className="text-sm text-gray-500"
+                className="text-sm dark:text-gray-400 text-gray-500"
               >({product.rating.count} reviews)</span>
             </div>
             <button

@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-100 dark:bg-zinc-900 shadow-md sticky top-0 z-50">
+    <nav className="bg-gray-100 dark:bg-gray-900 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
         {/* Logo */}
         <div className='flex items-center'>
@@ -22,38 +22,38 @@ export default function Navbar() {
 
         <div className="hidden md:flex gap-20 text-gray-900 items-center text-lg font-bold">
           <NavLink to=""
-            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} hover:text-pink-600 dark:text-zinc-500`}>Home</NavLink>
+            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} hover:text-pink-600 dark:text-gray-400`}>Home</NavLink>
           <NavLink to="/about"
-            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} hover:text-pink-600 dark:text-zinc-500`}>About</NavLink>
+            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} hover:text-pink-600 dark:text-gray-400`}>About</NavLink>
           <NavLink to="/contact"
-            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} hover:text-pink-600 dark:text-zinc-500`}>Contact</NavLink>
+            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} hover:text-pink-600 dark:text-gray-400`}>Contact</NavLink>
         </div>
         <ThemeSet />
         <div>
           <NavLink to="/cart" className="relative text-gray-900 hover:text-pink-600">
-            <ShoppingCart className="inline-block w-5 h-5" />
+            <ShoppingCart className="inline-block w-5 h-5 dark:text-gray-400" />
             <span className="absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full px-1">2</span>
           </NavLink>
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X className=' dark:text-gray-400' size={24} /> : <Menu className=' dark:text-gray-400' size={24} />}
           </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden text-gray-900 px-4 pb-4 space-y-2">
+        <div className="md:hidden dark:text-gray-400 text-gray-900 px-4 pb-4 space-y-2">
           <NavLink to=""
-            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600`}>Home</NavLink>
+            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600 dark:text-gray-400`}>Home</NavLink>
           <NavLink to="/about"
-            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600`}
+            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600 dark:text-gray-400`}
           >About</NavLink>
           <NavLink to="/contact"
-            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600`}
+            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600 dark:text-gray-400`}
           >Contact</NavLink>
           <a href="/cart"
-            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600`}
+            className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600 dark:text-gray-500`}
           >Cart</a>
         </div>
       )}
