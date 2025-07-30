@@ -47,40 +47,40 @@ export default function Home() {
 
       <div
         ref={reference}
-        className="grid grid-cols-1 mt-15 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+        className="grid grid-cols-2 mt-15 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 gap-3 max-w-7xl mx-auto"
       >
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white mb-5 dark:bg-gray-900 p-4 rounded-xl shadow hover:shadow-lg transition duration-200"
+            className="bg-white mb-5 dark:bg-gray-900 p-4 rounded-xl h-50 md:h-90 shadow hover:shadow-lg transition duration-200"
           >
-            <div className="flex h-48 rounded-md">
+            <div className="flex h-25 md:h-48 rounded-md">
               <img
                 src={product.image}
                 alt={product.name}
-                className=" w-full h-full object-center rounded-md mb-4"
+                className=" w-full h-full object-center rounded-md md:mb-4"
               />
             </div>
             <h3
-              className="text-lg font-semibold dark:text-gray-400 text-gray-900 mb-1"
+              className="md:text-lg text-[15px] font-semibold dark:text-gray-400 md:mb-1  text-gray-900"
             >
               {product.category}
             </h3>
             <p
-              className="text-gray-900 dark:text-gray-400 font-bold text-md mb-3"
+              className="text-gray-900 text-[10px]  md:mb-3 dark:text-gray-400 font-bold md:text-[16px]"
             >${product.price}</p>
             <div
-              className="flex items-center justify-between mt-4"
+              className="flex items-center justify-between md:mt-4"
             >
               <span
-                className="text-sm dark:text-gray-400 text-gray-500"
+                className="md:text-sm text-[10px] dark:text-gray-400  text-gray-500"
               >Rating: {product.rating.rate}</span>
               <span
-                className="text-sm dark:text-gray-400 text-gray-500"
+                className="md:text-sm text-[10px] dark:text-gray-400 text-gray-500"
               >({product.rating.count} reviews)</span>
             </div>
             <button
-              className="w-full bg-pink-600 text-white py-2 rounded-lg hover:bg-transparent hover:text-pink-600 hover:border-2 hover:py-1.5 cursor-pointer transition"
+              className="w-full bg-pink-600 text-white md:py-2 md:rounded-lg rounded hover:bg-transparent hover:text-pink-600 hover:border-2 hover:py-1.5 cursor-pointer transition"
             >
               Add to Cart
             </button>

@@ -41,7 +41,7 @@ function ThemeSet() {
                 onClick={changeTheme}
                 className={`
         p-3 rounded-full text-xl
-        bg-gray-200 dark:bg-gray-800 text-black dark:text-white
+       dark:text-gray-400 text-black 
         transition-transform duration-500
         ${rotating ? 'rotate-180' : 'rotate-0'}`}>
                 {theme === 'light' ? <LuSunMoon size={30} /> : <LuSun size={30} />}
