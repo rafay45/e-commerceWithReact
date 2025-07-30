@@ -8,7 +8,6 @@ function ThemeSet() {
 
     useEffect(() => {
         let getTheme = localStorage.getItem('themeToggle');
-        console.log(getTheme);
         if (getTheme === 'dark') {
             setTheme(getTheme)
             document.querySelector('html').classList.add(getTheme)
