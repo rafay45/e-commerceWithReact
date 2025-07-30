@@ -80,7 +80,7 @@ export default function Home() {
               >({product.rating.count} reviews)</span>
             </div>
             <button
-              className="w-full bg-pink-600 text-white md:py-2 md:rounded-lg rounded hover:bg-transparent hover:text-pink-600 hover:border-2 hover:py-1.5 cursor-pointer transition"
+              className="w-full bg-pink-600 text-white text-[10px] md:text-[16px] md:py-2 md:rounded-lg rounded hover:bg-transparent hover:text-pink-600 hover:border-2 hover:py-1.5 cursor-pointer transition"
             >
               Add to Cart
             </button>
