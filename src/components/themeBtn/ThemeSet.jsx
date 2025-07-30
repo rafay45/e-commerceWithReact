@@ -1,37 +1,51 @@
 import { LuSun } from "react-icons/lu"
 import { LuSunMoon } from "react-icons/lu"
-import { useTheme } from "../switcher/switcher"
+import { useState, useEffect } from "react"
 
 function ThemeSet() {
-    const { theme, darkTheme, lightTheme } = useTheme()
-    const changeTheme = () => {
-        if (theme) {
-            darkTheme()
-            // localStorage.setItem('themeToggle', theme)
+    const [rotating, setrotaiting] = useState(false)
+    const [theme, setTheme] = useState('light')
+
+    useEffect(() => {
+        let getTheme = localStorage.getItem('themeToggle');
+        console.log(getTheme);
+        if (getTheme === 'dark') {
+            setTheme(getTheme)
+            document.querySelector('html').classList.add(getTheme)
         } else {
-            lightTheme()
+            document.querySelector('html').classList.add('light')
         }
+    }, [])
+
+    const changeTheme = () => {
+        setrotaiting(true)
+        setTimeout(() => {
+            setTheme(prev => prev === 'light' ? 'dark' : 'light')
+        }, 250);
+
+        setTimeout(() => {
+            setrotaiting(false)
+        }, 500);
     }
-    // const changeSec = () => {
-    //     if (theme === "dark") {
-    //         lightTheme()
-    //         // localStorage.removeItem('themeToggle')
-    //     } else {
-    //         darkTheme()
-    //     }
-    // }
+
+
+    useEffect(() => {
+        document.querySelector('html').classList.remove(theme === 'light' ? 'dark' : 'light');
+        localStorage.setItem('themeToggle', theme)
+        document.querySelector('html').classList.add(theme)
+    }, [theme])
+
     return (
         <>
             <button
                 onClick={changeTheme}
-                className={`md:w-14 md:h-15 h-7 w-7 justify-center dark:text-gray-400 text-white items-center cursor-pointer ${theme === "dark" ? "flex" : "hidden"} `}>
+                className={`
+        p-3 rounded-full text-xl
+        bg-gray-200 dark:bg-gray-800 text-black dark:text-white
+        transition-transform duration-500
+        ${rotating ? 'rotate-180' : 'rotate-0'}`}>
                 {theme === 'light' ? <LuSunMoon size={30} /> : <LuSun size={30} />}
-            </button>
-            {/* <button
-                onClick={changeTheme}
-                className={`md:w-14 md:h-15 h-7 w-7 justify-center items-center cursor-pointer ${theme === "light" ? "flex" : "hidden"}`}>
-                <LuSunMoon size={30} />
-            </button> */}
+            </button >
         </>
     )
 }
