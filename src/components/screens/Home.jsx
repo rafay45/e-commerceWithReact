@@ -57,7 +57,7 @@ export default function Home() {
               <img
                 src={product.image}
                 alt={product.name}
-                className=" w-full h-full object-center rounded-md md:mb-4"
+                className=" w-full dark:bg-gray-200 h-full object-center rounded-md md:mb-4"
               />
             </div>
             <h3
