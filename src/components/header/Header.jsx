@@ -53,9 +53,9 @@ export default function Navbar() {
           <NavLink to="/contact"
             className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600 dark:text-gray-400`}
           >Contact</NavLink>
-          <a href="/cart"
+          <NavLink to="/cart"
             className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} block hover:text-pink-600 dark:text-gray-500`}
-          >Cart</a>
+          >Cart</NavLink>
         </div>
       )}
     </nav>

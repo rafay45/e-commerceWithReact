@@ -1,6 +1,6 @@
 import fetchapi from "../../customhook/fetchapi";
 import banner from "../../assets/bannerImage.png"
-import { useRef, useContext } from "react";
+import { useRef, useContext, useState } from "react";
 import { context } from "../index";
 
 
@@ -8,6 +8,16 @@ export default function Home() {
   const products = fetchapi([]);
   const { addToCart } = useContext(context)
   const reference = useRef(null)
+  const [alert, setAlert] = useState(false)
+
+  const handleaddToCart = (product) => {
+    addToCart(product)
+    setAlert(true)
+
+    setTimeout(() => {
+      setAlert(false)
+    }, 2000)
+  }
 
   const handleClick = () => {
     reference.current.scrollIntoView({ behavior: "smooth" })
@@ -80,11 +90,18 @@ export default function Home() {
               >({product.rating.count} reviews)</span>
             </div>
             <button
-              onClick={() => addToCart(product)}
+              onClick={() => handleaddToCart(product)}
               className="w-full bg-pink-600 text-white text-[12px] md:text-[14px] lg:text-[15px] md:py-2 md:rounded-lg rounded hover:bg-transparent hover:text-pink-600 hover:border-2 hover:py-1.5 cursor-pointer transition"
             >
               Add to Cart
             </button>
+            {
+              alert && (
+                <div className="fixed top-20 left-5 bg-green-600 text-white px-5 py-2 rounded shadow-lg">
+                  Item added to cart!
+                </div>
+              )
+            }
           </div>
         ))}
       </div>
