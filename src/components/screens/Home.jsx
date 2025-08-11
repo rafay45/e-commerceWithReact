@@ -5,7 +5,6 @@ import { useRef } from "react";
 
 export default function Home() {
   const products = fetchapi([]);
-  console.log("Products fetched:", products);
 
   const reference = useRef(null)
 
