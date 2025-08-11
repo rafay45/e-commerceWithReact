@@ -5,14 +5,14 @@ function Cart() {
   const { cartItems } = useContext(context)
   return (
     <div
-    className="dark:bg-gray-800"
+      className="dark:bg-gray-800"
     >
       {cartItems.length === 0 ? (
         <h1
         >The Cart is empty</h1>
       ) : (
-        <div 
-        className="dark:bg-gray-800"
+        <div
+          className="dark:bg-gray-800"
         >
           {<div
             className="grid grid-cols-2 mt-15 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 gap-3 max-w-7xl mx-auto"
