@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
-import { ThemeSet } from '../index'
+import { useState, useContext } from 'react';
+import { ThemeSet, context } from '../index'
 import logo from '../../assets/favicon.png';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { cartItems } = useContext(context)
 
   return (
     <nav className="bg-gray-100 dark:bg-gray-900 shadow-md sticky top-0 z-50">
@@ -30,9 +31,9 @@ export default function Navbar() {
         </div>
         <ThemeSet />
         <div>
-          <NavLink to="/cart" className={({isActive}) => `${isActive ? 'text-pink-600' : 'text-gray-900'} relative text-gray-900 hover:text-pink-600`}>
+          <NavLink to="/cart" className={({ isActive }) => `${isActive ? 'text-pink-600' : 'text-gray-900'} relative text-gray-900 hover:text-pink-600`}>
             <ShoppingCart className="inline-block w-5 h-5 dark:hover:text-pink-600 dark:text-gray-400" />
-            <span className="absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full px-1">0</span>
+            <span className="absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full px-1">{cartItems.length === 0 ? "0" : cartItems.length}</span>
           </NavLink>
         </div>
         <div className="md:hidden">
