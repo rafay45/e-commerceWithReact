@@ -97,8 +97,15 @@ export default function Home() {
             </button>
             {
               alert && (
-                <div className="fixed top-20 left-5 bg-green-600 text-white px-5 py-2 rounded shadow-lg">
+                <div className="fixed top-20 left-5 bg-green-500 text-white
+                 px-5 py-2 rounded shadow-lg"
+                 >
                   Item added to cart!
+                  <span
+                   className="absolute left-[-8px] top-1/2 -translate-y-1/2 
+                   w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent
+                   border-r-green-500">
+                  </span>
                 </div>
               )
             }
