@@ -8,8 +8,13 @@ function Cart() {
       className="dark:bg-gray-800"
     >
       {cartItems.length === 0 ? (
-        <h1
-        >The Cart is empty</h1>
+        <div
+          className="w-full h-70 flex justify-center items-center"
+        >
+          <h1
+            className="md:text-4xl text-2xl font-bold text-gray-300 dark:text-gray-700"
+          >Your Cart is empty.</h1>
+        </div>
       ) : (
         <div
           className="dark:bg-gray-800"
@@ -50,7 +55,7 @@ function Cart() {
                 <button
                   className="w-full bg-pink-600 text-white text-[12px] md:text-[14px] lg:text-[15px] md:py-2 md:rounded-lg rounded hover:bg-transparent hover:text-pink-600 hover:border-2 hover:py-1.5 cursor-pointer transition"
                 >
-                  Add to Cart
+                  Remove from cart
                 </button>
               </div>
             ))}
