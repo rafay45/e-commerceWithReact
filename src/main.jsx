@@ -1,9 +1,9 @@
 import React from 'react'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { ClipLoader } from 'react-spinners'
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
-// import { Home, About, Contact, Cart } from './components/index.js'
 import App from './App.jsx'
 const Home = React.lazy(() => import('./components/screens/Home.jsx'))
 const About = React.lazy(() => import('./components/screens/About.jsx'))
@@ -16,7 +16,7 @@ const router = createBrowserRouter(
       <Route
         index
         element={
-          <React.Suspense fallback={<div>Loading...</div>}>
+          <React.Suspense fallback={<div className='flex justify-center items-center h-96 w-full'><ClipLoader size={50} color='#ff4081' /></div>}>
             <Home />
           </React.Suspense>
         }
@@ -24,13 +24,23 @@ const router = createBrowserRouter(
       <Route
         path='about'
         element={
-          <React.Suspense fallback={<div>Loading...</div>}>
+          <React.Suspense fallback={<div className='flex justify-center items-center  h-screen w-full'><ClipLoader size={50} color='#ff4081' /></div>}>
             <About />
           </React.Suspense>
-         }
+        }
       />
-      <Route path='contact' element={<Contact />} />
-      <Route path='cart' element={<Cart />} />
+      <Route
+        path='contact'
+        element={<React.Suspense fallback={<div className='flex justify-center items-center h-96 w-full'><ClipLoader size={50} color='#ff4081' /></div>}>
+          <Contact />
+        </React.Suspense>}
+      />
+      <Route
+        path='cart'
+        element={<React.Suspense fallback={<div className='flex justify-center items-center h-96 w-full'><ClipLoader size={50} color='#ff4081' /></div>}>
+          <Cart />
+        </React.Suspense>}
+      />
     </Route>
 
   )
