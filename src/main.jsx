@@ -16,9 +16,7 @@ const router = createBrowserRouter(
       <Route
         index
         element={
-          <React.Suspense fallback={<div className='flex justify-center items-center h-96 w-full'><ClipLoader size={50} color='#ff4081' /></div>}>
-            <Home />
-          </React.Suspense>
+          <Home />
         }
       />
       <Route

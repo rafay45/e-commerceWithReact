@@ -7,23 +7,7 @@ import { context } from "../index";
 export default function Home() {
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    fetching().then(data => {
-      setProducts(data)
-      setLoading(false)
-    })
-  }, [])
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <span className="animate-spin border-4 border-pink-500 border-t-transparent rounded-full w-12 h-12"></span>
-      </div>
-    );
-  }
-
-
+  
   const { addToCart } = useContext(context)
   const reference = useRef(null)
   const [alert, setAlert] = useState(false)
@@ -40,6 +24,22 @@ export default function Home() {
   const handleClick = () => {
     reference.current.scrollIntoView({ behavior: "smooth" })
   }
+
+  useEffect(() => {
+    fetching().then(data => {
+      setProducts(data)
+      setLoading(false)
+    })
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="animate-spin border-4 border-pink-500 border-t-transparent rounded-full w-12 h-12"></span>
+      </div>
+    );
+  }
+
 
   return (
     <section
