@@ -1,11 +1,29 @@
-import fetchapi from "../../customhook/fetchapi";
+import { fetching } from '../../customhook/fetchapi'
 import banner from "../../assets/bannerImage.png"
-import { useRef, useContext, useState } from "react";
+import { useRef, useContext, useState, useEffect } from "react";
 import { context } from "../index";
 
 
 export default function Home() {
-  const products = fetchapi([]);
+  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetching().then(data => {
+      setProducts(data)
+      setLoading(false)
+    })
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="animate-spin border-4 border-pink-500 border-t-transparent rounded-full w-12 h-12"></span>
+      </div>
+    );
+  }
+
+
   const { addToCart } = useContext(context)
   const reference = useRef(null)
   const [alert, setAlert] = useState(false)
@@ -22,7 +40,6 @@ export default function Home() {
   const handleClick = () => {
     reference.current.scrollIntoView({ behavior: "smooth" })
   }
-
 
   return (
     <section
@@ -99,10 +116,10 @@ export default function Home() {
               alert && (
                 <div className="fixed top-20 left-5 bg-green-600 text-white
                  px-5 py-2 rounded shadow-lg"
-                 >
+                >
                   Item added to cart!
                   <span
-                   className="absolute left-[-8px] top-1/2 -translate-y-1/2 
+                    className="absolute left-[-8px] top-1/2 -translate-y-1/2 
                    w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent
                    border-r-green-600">
                   </span>
