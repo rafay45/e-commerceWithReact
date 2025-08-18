@@ -1,11 +1,18 @@
+import { useState } from "react"
 import { context } from "../index"
 import { useContext } from "react"
 
 function Cart() {
   const { cartItems, removeCart } = useContext(context)
 
+  const [alert, setAlert] = useState(false)
   const hanleRemoveCart = (items) => {
-       removeCart(items)
+    removeCart(items)
+    setAlert(true)
+
+    setTimeout(() => {
+      setAlert(false)
+    }, 2000);
   }
 
   return (
@@ -63,6 +70,20 @@ function Cart() {
                 >
                   Remove from cart
                 </button>
+                {
+                  alert && (
+                    <div className="fixed top-20 left-5 bg-green-600 text-white
+                 px-5 py-2 rounded shadow-lg"
+                    >
+                      Item removed from cart!
+                      <span
+                        className="absolute left-[-8px] top-1/2 -translate-y-1/2 
+                   w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent
+                   border-r-green-600">
+                      </span>
+                    </div>
+                  )
+                }
               </div>
             ))}
           </div>}
