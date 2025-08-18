@@ -5,13 +5,15 @@ import { useContext } from "react"
 function Cart() {
   const { cartItems, removeCart } = useContext(context)
 
+  const [alerMsg, setalertMsg] = useState("")
   const [alert, setAlert] = useState(false)
   const hanleRemoveCart = (items) => {
     removeCart(items)
     setAlert(true)
-
+    setalertMsg("Item removed from cart")
     setTimeout(() => {
       setAlert(false)
+      setalertMsg("")
     }, 2000);
   }
 
@@ -19,6 +21,20 @@ function Cart() {
     <div
       className="dark:bg-gray-800"
     >
+      {
+        alert && (
+          <div className="fixed top-20 left-5 bg-green-600 text-white
+                 px-5 py-2 rounded shadow-lg"
+          >
+            {alerMsg}
+            <span
+              className="absolute left-[-8px] top-1/2 -translate-y-1/2 
+                   w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent
+                   border-r-green-600">
+            </span>
+          </div>
+        )
+      }
       {cartItems.length === 0 ? (
         <div
           className="w-full h-70 flex justify-center items-center"
@@ -70,20 +86,6 @@ function Cart() {
                 >
                   Remove from cart
                 </button>
-                {
-                  alert && (
-                    <div className="fixed top-20 left-5 bg-green-600 text-white
-                 px-5 py-2 rounded shadow-lg"
-                    >
-                      Item removed from cart!
-                      <span
-                        className="absolute left-[-8px] top-1/2 -translate-y-1/2 
-                   w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent
-                   border-r-green-600">
-                      </span>
-                    </div>
-                  )
-                }
               </div>
             ))}
           </div>}
