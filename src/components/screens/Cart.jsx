@@ -2,7 +2,12 @@ import { context } from "../index"
 import { useContext } from "react"
 
 function Cart() {
-  const { cartItems } = useContext(context)
+  const { cartItems, removeCart } = useContext(context)
+
+  const hanleRemoveCart = (items) => {
+       removeCart(items)
+  }
+
   return (
     <div
       className="dark:bg-gray-800"
@@ -53,6 +58,7 @@ function Cart() {
                   >({items.rating.count} reviews)</span>
                 </div>
                 <button
+                  onClick={() => hanleRemoveCart(items)}
                   className="w-full bg-pink-600 text-white text-[12px] md:text-[14px] lg:text-[15px] md:py-2 md:rounded-lg rounded hover:bg-transparent hover:text-pink-600 hover:border-2 hover:py-1.5 cursor-pointer transition"
                 >
                   Remove from cart
