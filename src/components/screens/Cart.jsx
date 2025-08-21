@@ -7,6 +7,7 @@ function Cart() {
 
   const [alerMsg, setalertMsg] = useState("")
   const [alert, setAlert] = useState(false)
+  
   const hanleRemoveCart = (items) => {
     removeCart(items)
     setAlert(true)

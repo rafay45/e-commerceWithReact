@@ -13,7 +13,7 @@ export function CartProvider({ children }) {
         setCartItems(prev => prev.filter(item => item !== product))
     }
     return (
-        <context.Provider value={{ cartItems, addToCart, removeCart}}>
+        <context.Provider value={{ cartItems, addToCart, removeCart }}>
             {children}
         </context.Provider>
     )

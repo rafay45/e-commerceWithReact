@@ -6,9 +6,10 @@ import { context } from "../index";
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([])  
   
   const { addToCart } = useContext(context)
+
   const reference = useRef(null)
   const [alert, setAlert] = useState(false)
 
@@ -39,7 +40,6 @@ export default function Home() {
       </div>
     );
   }
-
 
   return (
     <section
