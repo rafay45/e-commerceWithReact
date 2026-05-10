@@ -6,7 +6,8 @@ import Footer from "./footer/Footer";
 import Container from "./container/Container"
 import ThemeSet from "./themeBtn/ThemeSet"
 import Cart from "./screens/Cart";
+import ProductDetail from "./screens/ProductDetail";
 import { CartProvider } from "./context/context";
 import { context } from "./context/context";
 
-export { About, Home, Navbar, Contact, Footer, Container, ThemeSet, Cart, CartProvider, context };
+export { About, Home, Navbar, Contact, Footer, Container, ThemeSet, Cart, ProductDetail, CartProvider, context };

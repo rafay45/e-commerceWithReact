@@ -1,14 +1,16 @@
 import { fetching } from '../../customhook/fetchapi'
 import banner from "../../assets/bannerImage.png"
 import { useRef, useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { context } from "../index";
 
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
-  const [products, setProducts] = useState([])  
-  
+  const [products, setProducts] = useState([])
+
   const { addToCart } = useContext(context)
+  const navigate = useNavigate()
 
   const reference = useRef(null)
   const [alert, setAlert] = useState(false)
@@ -81,7 +83,10 @@ export default function Home() {
             key={product.id}
             className="bg-white mb-5 dark:bg-gray-900 p-4 rounded-xl h-50 md:h-90 shadow hover:shadow-lg transition duration-200"
           >
-            <div className="flex h-25 md:h-48 rounded-md">
+            <div
+              onClick={() => navigate(`/product/${product.id}`)}
+              className="flex h-25 md:h-48 rounded-md cursor-pointer"
+            >
               <img
                 src={product.image}
                 alt={product.name}
@@ -89,7 +94,8 @@ export default function Home() {
               />
             </div>
             <h3
-              className="md:text-lg text-[15px] font-semibold dark:text-gray-400 md:mb-1  text-gray-900"
+              onClick={() => navigate(`/product/${product.id}`)}
+              className="md:text-lg text-[15px] font-semibold dark:text-gray-400 md:mb-1 text-gray-900 cursor-pointer hover:text-pink-500 transition"
             >
               {product.category}
             </h3>

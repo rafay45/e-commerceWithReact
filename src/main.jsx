@@ -9,6 +9,7 @@ const Home = React.lazy(() => import('./components/screens/Home.jsx'))
 const About = React.lazy(() => import('./components/screens/About.jsx'))
 const Contact = React.lazy(() => import('./components/screens/Contact.jsx'))
 const Cart = React.lazy(() => import('./components/screens/Cart.jsx'))
+const ProductDetail = React.lazy(() => import('./components/screens/ProductDetail.jsx'))
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,6 +38,12 @@ const router = createBrowserRouter(
         path='cart'
         element={<React.Suspense fallback={<div className='flex justify-center items-center h-96 w-full'><ClipLoader size={50} color='#ff4081' /></div>}>
           <Cart />
+        </React.Suspense>}
+      />
+      <Route
+        path='product/:id'
+        element={<React.Suspense fallback={<div className='flex justify-center items-center h-screen w-full'><ClipLoader size={50} color='#ff4081' /></div>}>
+          <ProductDetail />
         </React.Suspense>}
       />
     </Route>
